@@ -103,7 +103,7 @@ section h2 {
 
 #mainNav .navbar-brand {
   color: #fff;
-  background-image: url('/img/hootware_128.png');
+  background-image: url('/static/img/hootware_128.png');
   background-position: left center;
   background-repeat: no-repeat;
   padding-top: 5px;
