@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Redirecting...</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-25TFYZMFS5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-25TFYZMFS5');
+    </script>
+</head>
+<body>
+    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <h2>Redirecting you to our Amazon shop...</h2>
+        <p>Please wait a moment while we redirect you.</p>
+    </div>
+
+    <script>
+        // Get book ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookId = urlParams.get('book');
+        
+        // Your Amazon URL - replace this with your actual Amazon link
+        const amazonUrl = 'https://amazon.com/your-book-link-here';
+
+        if (bookId) {
+            // Send custom event to Google Analytics with book ID
+            gtag('event', 'book_redirect', {
+                'book_id': bookId,
+                'value': 1
+            });
+        }
+
+        // Wait 200ms for GA to process the event, then redirect
+        setTimeout(() => {
+            window.location.href = amazonUrl;
+        }, 200);
+    </script>
+</body>
+</html>
